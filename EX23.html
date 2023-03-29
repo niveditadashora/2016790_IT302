@@ -1,0 +1,107 @@
+<html>
+  <head>
+    <title>EXER 23</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .header1 {
+        text-align: center;
+        background-image: linear-gradient(rgb(79, 5, 5), rgb(244, 208, 111));
+        padding: 15px;
+        border-radius: 50px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-size: 20px;
+        color: rgb(5, 18, 78);
+        border: 3px solid;
+        box-shadow: 10px 10px 20px;
+      }
+      .box {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 20px;
+        border: 2px solid black;
+        border-radius: 20px;
+        background-color: bisque;
+      }
+      .card {
+        width: 30%;
+        box-shadow: 15px 15px 20px rgb(41, 36, 36);
+        background-color: rgb(115, 246, 7);
+        border: 2px solid rgb(3, 3, 3);
+        border-radius: 20px;
+        margin: 20px;
+      }
+      .card img {
+        width: 100%;
+        height: 60%;
+        border-radius: 20px;
+        border: 2px solid;
+      }
+
+      .date {
+        box-shadow: 8px 8px 10px rgb(216, 24, 24);
+        width: fit-content;
+        color: white;
+        font-size: 30px;
+        background-color: rgb(61, 18, 18);
+        position: absolute;
+        top: 37%;
+        transform: rotate(-5deg);
+      }
+      .dis {
+        text-align: center;
+        color: black;
+      }
+      .dis h2 {
+        color: rgb(247, 6, 6);
+        font-size: larger;
+        text-shadow: 5px;
+      }
+      .dis p {
+        color: black;
+        font-size: medium;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header1">
+      <h1>Card Layout</h1>
+    </div>
+    <div class="box">
+      <script>
+        images = ["1.jpeg", "4.jpeg", "2.jpeg"];
+        date = ["21 OCT", "22 JUNE", "29SEPT"];
+        title = ["Workshop", "Lecture", "Prepare"];
+        des = [
+          "qwertyuioplkjhgfdsamnbvcxz",
+          "qwertyuioplkjhgfdsamnbvcxz",
+          "qwertyuioplkjhgfdsamnbvcxz",
+        ];
+        for (i = 0; i < 3; i++) {
+          card =
+            '<div class="card">' +
+            '<img src="images/' +
+            images[i] +
+            '">' +
+            '<div class="date">' +
+            date[i] +
+            "</div>" +
+            '<h3 align="center">TITLE</h3>' +
+            ' <div class="dis">' +
+            "<h2>" +
+            title[i] +
+            "</h2>" +
+            "<p>" +
+            des[i] +
+            "</p>" +
+            "</div>" +
+            "</div>";
+
+          document.write(card);
+        }
+      </script>
+    </div>
+  </body>
+</html>

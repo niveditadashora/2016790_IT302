@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>exercise26</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        background-color: bisque;
+      }
+      #timer {
+        height: 25%;
+        width: 25%;
+        border: 5px solid black;
+        background-color: darkorchid;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 50px;
+        padding: 30px;
+        margin: 50px;
+      }
+      .clock button {
+        margin: 50px;
+        color: rgb(240, 232, 233);
+        padding: 20px;
+        font-size: 20px;
+        background-color: rgb(233, 134, 13);
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="timer"></div>
+    <script>
+      Count = 0;
+      function start() {
+        t = document.getElementById("timer");
+        t.innerHTML = Count;
+        Count++;
+      }
+      // onclick = "x=setInterval(start,1000)";
+    </script>
+    <div class="clock">
+      <button onclick="x=setInterval(start,1000)">START</button>
+      <button onclick="clearInterval(x)">STOP</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Temperature conversion</title>
+    <style>
+        * {
+            text-align: center;
+            background: #FAFFAF;
+            font-size: 20px;
+            font-weight: 700;
+            font-family: cursive;
+        }
+
+        h1 {
+            color: #22577E;
+            font-size: 40px;
+        }
+
+        input {
+            padding: 5px;
+            margin: 10px;
+        }
+
+        input:hover {
+            cursor: pointer;
+            background-color: #95D1CC;
+        }
+
+        select {
+            padding: 5px 0px;
+            margin: 10px;
+            background-color: #5584AC;
+            cursor: pointer;
+        }
+
+        select:hover {
+            background-color: #95D1CC;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Temperature Converter<h1>
+            <form id="temp">
+                <input type=number placeholder="Enter temperature">
+                <select name="input">
+                    <option value="K">Kelvin (°K)</option>
+                    <option value="C">Celsius (°C)</option>
+                    <option value="F">Fahrenheit (°F)</option>
+                </select>
+                <br>
+                <input type=text>
+                <select name="output">
+                    <option value="K">Kelvin (°K)</option>
+                    <option value="C">Celsius (°C)</option>
+                    <option value="F">Fahrenheit (°F)</option>
+                </select>
+                <br>
+                <input type="button" onclick="convert()" value="Convert">
+
+                <input type="button" onclick="clear()" value="Clear">
+            </form>
+            <script>
+                function convert() {
+                    var x = document.getElementById('temp').elements[0].value;
+                    var input = parseInt(x);
+                    var inputUnit = document.getElementById('temp').elements[1].value;
+                    var outputUnit = document.getElementById('temp').elements[3].value;
+                    var result;
+                    if ((inputUnit == 'C') && (outputUnit == 'F')) {
+                        result = input * 9 / 5 + 32;
+                    }
+                    else if ((inputUnit == 'C') && (outputUnit == 'K')) {
+                        result = input + 273;
+                    }
+                    else if ((inputUnit == 'F') && (outputUnit == 'C')) {
+                        result = (input - 32) * 5 / 9;
+                    }
+                    else if ((inputUnit == 'F') && (outputUnit == 'K')) {
+                        result = (input - 32) * 5 / 9 + 273;
+                    }
+                    else if ((inputUnit == 'K') && (outputUnit == 'C')) {
+                        result = input - 273;
+                    }
+
+                    else if ((inputUnit == 'K') && (outputUnit == 'F')) {
+                        result = (input - 273) * 9 / 5 + 32;
+                    }
+                    else {
+                        result = input;
+                    }
+                    document.getElementById('temp').elements[2].value = parseFloat(result).toFixed(2);
+                }
+                function clear() {
+                    document.getElementById('temp').clear();
+                    //convert();
+                }
+            </script>
+</body>
+
+</html>

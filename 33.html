@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+  </head>
+  <style>
+    body {
+      background-color: black;
+    }
+    h1 {
+      color: bisque;
+    }
+    .imgGal {
+      color: bisque;
+      display: flex;
+      justify-content: center;
+      font-size: 32px;
+      background-color: crimson;
+    }
+    .gallery {
+      display: flex;
+      width: 100%;
+      justify-content: space-evenly;
+    }
+    .img_icon {
+      height: 100px;
+      width: 100px;
+      margin-top: 7px;
+      margin-bottom: 7px;
+      border: 5px solid burlywood;
+      border-radius: 5px;
+    }
+    .img_icon:hover {
+      transform: scale(1.2);
+    }
+    .container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .dabba {
+      width: 65%;
+      height: 500px;
+      border: 3px solid white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #imgContent {
+      height: 480px;
+      width: auto;
+    }
+  </style>
+  <body>
+    <div class="imgGal">Image Gallery</div>
+    <div class="gallery">
+      <img
+        src="images/1.jpeg"
+        alt="first"
+        class="img_icon"
+        onclick="change(this);"
+      />
+      <img
+        src="images/2.jpeg"
+        alt="second"
+        class="img_icon"
+        onclick="change(this);"
+      />
+      <img
+        src="images/3.jpeg"
+        alt="third"
+        class="img_icon"
+        onclick="change(this);"
+      />
+      <img
+        src="images/4.jpeg"
+        alt="fourth"
+        class="img_icon"
+        onclick="change(this);"
+      />
+      <img
+        src="images/5.jpeg"
+        alt="fourth"
+        class="img_icon"
+        onclick="change(this);"
+      />
+      <img
+        src="images/6.jpg"
+        alt="fourth"
+        class="img_icon"
+        onclick="change(this);"
+      />
+      <img
+        src="images/7.jpeg"
+        alt="fourth"
+        class="img_icon"
+        onclick="change(this);"
+      />
+      <img
+        src="images/8.jpeg"
+        alt="fourth"
+        class="img_icon"
+        onclick="change(this);"
+      />
+      <img
+        src="images/9.jpeg"
+        alt="fourth"
+        class="img_icon"
+        onclick="change(this);"
+      />
+    </div>
+    <hr />
+    <div class="container">
+      <div class="dabba">
+        <img id="imgContent" src="images/1.jpeg" />
+      </div>
+    </div>
+    <script>
+      function change(obj) {
+        var showImg = document.getElementById("imgContent");
+        showImg.src = obj.src;
+      }
+      images = document.getElementsByClassName("img_icon");
+      index = 0;
+      function loopIt() {
+        var showImg = document.getElementById("imgContent");
+        showImg.src = images[index].src;
+        index++;
+        if (index >= images.length) {
+          index = 0;
+        }
+      }
+      setInterval(loopIt, 2000);
+    </script>
+  </body>
+</html>
